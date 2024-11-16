@@ -25,7 +25,7 @@ module.exports = {
         use: 'babel-loader',
       },
       {
-        test: /\.(jpg|png|gif|svg)$/, //处理图片文件打包
+        test: /\.(jpg|png|gif)$/, //处理图片文件打包
         type: 'asset', //webpack5新增的处理静态资源的loader，替换之前的url-loder、file-loader,具体的可以官方文档
         parser: {
           dataUrlCondition: {
@@ -37,13 +37,23 @@ module.exports = {
         },
       },
       {
-        test: /\.(css|scss|sass)$/,
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      },
+      {
+        test: /\.css$/i,
+        include: path.resolve(__dirname, 'src'),
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.(scss|sass|css)$/,
         use: [
           //loader 顺序是自下而上执行，所以顺序一定不要错
           'style-loader',
           'css-loader', //如果需要使用css module模式的话，在这个loader里面添加配置即可，自己百度下
           'sass-loader',
         ],
+        exclude: path.resolve(__dirname, 'src/index.css'),
       },
     ],
   },

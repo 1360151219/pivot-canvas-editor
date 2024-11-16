@@ -1,5 +1,4 @@
-.container {
-  background-color: rgb(240, 238, 238);
+.grid-background {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAABACAYAAACeo2ivAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVRYw+3BAQEAAACCoP6vbojAAAAABJRU5ErkJggg=='); /* 1x1 像素的黑色网格图像 Base64 编码 */
+  background-size: 50px 50px; /* 网格大小 */
 }
-
-#canvas {}

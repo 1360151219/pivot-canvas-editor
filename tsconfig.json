@@ -72,13 +72,15 @@
     /* Advanced Options */
     "skipLibCheck": true, /* Skip type checking of declaration files. */
     "forceConsistentCasingInFileNames": true, /* Disallow inconsistently-cased references to the same file. */
+    "allowJs": true,
     "resolveJsonModule": true
     // "exclude": [
     //   "node_modules"
     // ]
   },
   "include": [
-    "./src/**/*.tsx"
+    "./src/**/*.tsx",
+    "./src/global.d.ts"
   ],
   "exclude": [
     "node_modules",
