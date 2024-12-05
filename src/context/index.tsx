@@ -6,9 +6,9 @@ const GlobalContext = React.createContext<{ state: GlobalContextProps; dispatch:
 const reducer: Reducer<GlobalContextProps, any> = (state, action) => {
   switch (action.type) {
     case 'initCanvas':
-      return { canvas: action.payload.canvas };
+      return { ...state, canvas: action.payload.canvas };
     case 'decrement':
-      return { canvas: action.payload.canvas };
+      return { ...state, canvas: action.payload.canvas };
     default:
       return state;
   }
